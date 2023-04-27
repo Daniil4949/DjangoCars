@@ -36,8 +36,11 @@ DJANGO_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 )
+
 THIRD_PARTY_APPS = ("rest_framework", "rest_framework_simplejwt", "rest_framework_swagger", "debug_toolbar")
-LOCALE_APPS = ("users", "authentication")
+
+LOCALE_APPS = ("users", "authentication",)
+
 INSTALLED_APPS = DJANGO_APPS + LOCALE_APPS + THIRD_PARTY_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
