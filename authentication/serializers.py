@@ -72,3 +72,14 @@ class ResetPasswordSerializer(serializers.Serializer):
         user.set_password(password)
         user.save()
         return data
+
+
+class ResetUserName(serializers.ModelSerializer):
+    username = serializers.CharField(
+        write_only=True,
+        validators=[UniqueValidator(queryset=UserCar.objects.all())]
+    )
+
+    class Meta:
+        model = UserCar
+        fields = ("username",)

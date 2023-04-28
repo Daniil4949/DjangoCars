@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r^y4d3qeqc4_p7d7g-g)xva52_chuia8a4&1vyib$5dx2d3_b^'
+SECRET_KEY = os.environ.get("SECRET_KEY", 'django-insecure-r^y4d3qeqc4_p7d7g-g)xva52_chuia8a4&1vyib$5dx2d3_b^')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,8 @@ DJANGO_APPS = (
     'django.contrib.staticfiles',
 )
 
-THIRD_PARTY_APPS = ("rest_framework", "rest_framework_simplejwt", "rest_framework_swagger", "debug_toolbar")
+THIRD_PARTY_APPS = (
+    "rest_framework", "rest_framework_simplejwt", "rest_framework_swagger", "debug_toolbar", "django_celery_results")
 
 LOCALE_APPS = ("users", "authentication",)
 
@@ -112,7 +113,9 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.BasicAuthentication', ]
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication'
+    ]
 }
 
 if DEBUG:

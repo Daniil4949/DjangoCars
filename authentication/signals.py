@@ -1,4 +1,4 @@
-from django.db.models.signals import post_save, post_init
+from django.db.models.signals import post_save
 from django.dispatch import receiver
 from users.models import UserCar
 from users.models import Customer, AutoShow, Provider

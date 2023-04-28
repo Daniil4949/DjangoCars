@@ -12,6 +12,8 @@ django-rest-swagger = "*"
 django-debug-toolbar = "*"
 celery = "*"
 django-countries = "*"
+django-reset-migrations = "*"
+django-celery-results = "*"
 
 [dev-packages]
 
