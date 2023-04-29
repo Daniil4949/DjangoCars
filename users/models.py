@@ -23,12 +23,12 @@ class UserCar(AbstractUser):
 class Provider(models.Model):
     name = models.CharField(max_length=20)
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
-    year_of_foundation = models.IntegerField(
-        validators=[
-            MinValueValidator(1900),
-            MaxValueValidator(date.today().year)
-        ]
-    )
+    year_of_foundation = models.IntegerField(null=True, blank=True,
+                                             validators=[
+                                                 MinValueValidator(1900),
+                                                 MaxValueValidator(date.today().year)
+                                             ]
+                                             )
 
     def __str__(self) -> str:
         return f"{self.name} - {self.user}"

@@ -38,9 +38,9 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
-    "rest_framework", "rest_framework_simplejwt", "rest_framework_swagger", "debug_toolbar", "django_celery_results")
+    "rest_framework", "rest_framework_simplejwt", "rest_framework_swagger", "debug_toolbar", "django_celery_results",)
 
-LOCALE_APPS = ("users", "authentication",)
+LOCALE_APPS = ("users", "authentication", "provider", "customer", "autoshow",)
 
 INSTALLED_APPS = DJANGO_APPS + LOCALE_APPS + THIRD_PARTY_APPS
 MIDDLEWARE = [
@@ -115,7 +115,11 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication'
-    ]
+    ],
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    ),
+
 }
 
 if DEBUG:

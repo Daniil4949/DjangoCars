@@ -3,7 +3,7 @@ from django.db import transaction
 
 
 @transaction.atomic()
-def change_username(user: UserCar, username):
+def change_username(user: UserCar, username: str):
     role: str = user.role
     user.username = username
     user.save()

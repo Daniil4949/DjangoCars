@@ -22,7 +22,11 @@ schema_view = get_swagger_view(title="Cars API")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("auth/", include("authentication.urls")),
-    path("docs/", schema_view, name="documentation"),
+    path("auth/", include("authentication.urls"), name="authentication"),
+    path("provider/", include("provider.urls"), name="providers"),
+    # path("customer/", include("customer.urls"), name="customers"),
+    # path("autoshow/", include("autoshow.urls"), name="autoshows"),
     path("__debug__/", include("debug_toolbar.urls")),
 ]
+
+urlpatterns += [path("docs/", schema_view, name="documentation")]

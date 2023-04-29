@@ -33,29 +33,29 @@ services:
       - web
     links:
       - rabbitmq
-#
-#  celery_beat_worker:
-#    container_name: celery_beat_worker
-#    build:
-#      context: ..
-#      dockerfile: docker/Dockerfile
-#    volumes:
-#      - .:/code
-#    command: celery -A Cars beat -l info
-#    depends_on:
-#      - rabbitmq
-#      - web
-#    links:
-#      - rabbitmq
-#
-#  flower:
-#    image: mher/flower
-#    command: celery --broker=amqp://user:bitnami@rabbitmq:5672//
-#    ports:
-#      - "8888:8888"
-#    depends_on:
-#      - rabbitmq
-#
+  #
+  #  celery_beat_worker:
+  #    container_name: celery_beat_worker
+  #    build:
+  #      context: ..
+  #      dockerfile: docker/Dockerfile
+  #    volumes:
+  #      - .:/code
+  #    command: celery -A Cars beat -l info
+  #    depends_on:
+  #      - rabbitmq
+  #      - web
+  #    links:
+  #      - rabbitmq
+  #
+  #  flower:
+  #    image: mher/flower
+  #    command: celery --broker=amqp://user:bitnami@rabbitmq:5672//
+  #    ports:
+  #      - "8888:8888"
+  #    depends_on:
+  #      - rabbitmq
+  #
   rabbitmq:
     container_name: rabbitmq
     hostname: rabbit
@@ -63,3 +63,6 @@ services:
     ports:
       - "5673:5673"
       - "15672:15672"  # here, we can access rabbitmq management plugin
+
+volumes:
+  data_app:
