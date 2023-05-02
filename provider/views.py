@@ -1,4 +1,3 @@
-from django.shortcuts import render, get_object_or_404
 from rest_framework import viewsets, status
 from Cars.permissions import ProviderPermission
 from users.models import Provider

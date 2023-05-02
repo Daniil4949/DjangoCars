@@ -6,3 +6,14 @@ class ProviderPermission(BasePermission):
 
     def has_permission(self, request, view):
         return request.user.role == UserCar.Roles.PROVIDER
+
+
+class AutoShowPermission(BasePermission):
+
+    def has_permission(self, request, view):
+        return request.user.role == UserCar.Roles.AUTOSHOW
+
+
+class CustomerPermission(BasePermission):
+    def has_permission(self, request, view):
+        return request.user.role == UserCar.Roles.CUSTOMER

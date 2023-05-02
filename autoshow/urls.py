@@ -1,14 +1,12 @@
-from django.urls import path, include
-from provider.views import ProviderProfile
-from rest_framework.routers import SimpleRouter
-
-# router = SimpleRouter()
-# router.register(r"profile", ProviderProfile, basename="Provider profile")
+from django.urls import path
+from autoshow.views import AutoShowProfile, AutoModels
 
 urlpatterns = [
-    # path("change/", include(router.urls), name="changing-profile"),
-    # path("providers/", ProviderProfile.as_view({"get": "list"}), name='All providers'),
-    # path("providers/<int:pk>/", ProviderProfile.as_view({"get": "retrieve"})),
-    # path("providers/change-profile/", ProviderProfile.as_view({"patch": "update"})),
+    path("autoshows/", AutoShowProfile.as_view({"get": "list"}), name='All autoshows'),
+    path("autoshows/<int:pk>/", AutoShowProfile.as_view({"get": "retrieve"})),
+    path("autoshows/change-profile/", AutoShowProfile.as_view({"patch": "update"})),
+    path("cars/", AutoModels.as_view({"get": "list", "post": "create"}), name='getting all desirable autos of the autoshow'),
+    path("cars/<int:pk>/", AutoModels.as_view({"get": "retrieve"}),
+         name='getting data about the definite desirable car')
 
 ]

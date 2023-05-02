@@ -24,8 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("auth/", include("authentication.urls"), name="authentication"),
     path("provider/", include("provider.urls"), name="providers"),
-    # path("customer/", include("customer.urls"), name="customers"),
-    # path("autoshow/", include("autoshow.urls"), name="autoshows"),
+    path("autoshow/", include("autoshow.urls"), name="autoshows"),
+    path("customer/", include("customer.urls"), name="customers"),
     path("__debug__/", include("debug_toolbar.urls")),
 ]
 

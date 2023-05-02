@@ -1,3 +1,9 @@
 from django.contrib import admin
+from users.models import DesirableAuto
 
-# Register your models here.
+
+class AutoAdmin(admin.ModelAdmin):
+    list_display = ("mark", "model", "price")
+
+
+admin.site.register(DesirableAuto, AutoAdmin)

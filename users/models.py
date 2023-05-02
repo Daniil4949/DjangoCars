@@ -26,9 +26,7 @@ class Provider(models.Model):
     year_of_foundation = models.IntegerField(null=True, blank=True,
                                              validators=[
                                                  MinValueValidator(1900),
-                                                 MaxValueValidator(date.today().year)
-                                             ]
-                                             )
+                                                 MaxValueValidator(date.today().year)])
 
     def __str__(self) -> str:
         return f"{self.name} - {self.user}"
@@ -47,7 +45,7 @@ class AutoShow(models.Model):
     name = models.CharField(max_length=20)
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     location = CountryField(null=True, blank=True)
-    balance = models.PositiveBigIntegerField()
+    balance = models.PositiveBigIntegerField(default=0)
     customers = models.ManyToManyField(Customer)
 
     def __str__(self) -> str:
@@ -57,8 +55,8 @@ class AutoShow(models.Model):
 class DesirableAuto(models.Model):
     mark = models.CharField(max_length=20, null=False)
     model = models.CharField(max_length=20, null=False)
-    price = models.DecimalField(max_digits=6, null=False, decimal_places=3)
-    autoshow = models.ForeignKey(AutoShow, on_delete=models.CASCADE)
+    price = models.IntegerField(null=False)
+    autoshow = models.OneToOneField(AutoShow, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return f"Desirable car characteristic. {self.mark} - {self.model}. Price: {self.price}"
