@@ -15,7 +15,7 @@ services:
   db:
     image: postgres:13.9
     volumes:
-      - /app:/var/lib/postgresql/data_app
+      - /app:/var/lib/postgresql/data_app_test
     env_file:
       - ../env_files/db-variables.env
     ports:
@@ -53,4 +53,4 @@ services:
       - "15672:15672"  # here, we can access rabbitmq management plugin
 
 volumes:
-  data_app:
+  data_app_test:
