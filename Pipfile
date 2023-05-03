@@ -15,6 +15,10 @@ django-countries = "*"
 django-reset-migrations = "*"
 django-celery-results = "*"
 django-annoying = "*"
+pytest = "*"
+django-pytest = "*"
+mixer = "*"
+mock = "*"
 
 [dev-packages]
 

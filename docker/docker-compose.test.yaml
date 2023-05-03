@@ -1,6 +1,17 @@
 version: "3.9"
 
 services:
+  test:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile_test
+    command: pytest
+    volumes:
+      - .:/code
+    environment:
+      - DJANGO_SETTINGS_MODULE=Cars.test_settings
+    depends_on:
+      - db
   db:
     image: postgres:13.9
     volumes:
@@ -12,7 +23,7 @@ services:
   web:
     build:
       context: ..
-      dockerfile: docker/Dockerfile
+      dockerfile: docker/Dockerfile_test
     volumes:
       - .:/code
     ports:
@@ -24,7 +35,7 @@ services:
     container_name: celery_worker
     build:
       context: ..
-      dockerfile: docker/Dockerfile
+      dockerfile: docker/Dockerfile_test
     volumes:
       - .:/code
     command: celery -A Cars worker -l info
