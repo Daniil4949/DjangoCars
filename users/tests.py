@@ -14,3 +14,7 @@ def test_user_autoshow_create():
     assert new_user.__str__() == "autoshow - autoshow"
 
 
+@pytest.mark.django_db
+def test_user_provider_create():
+    new_user = UserCar.objects.create(username="provider", email="provider@gmail.com", role="provider")
+    assert new_user.__str__() == "provider - provider"
