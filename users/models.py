@@ -13,7 +13,7 @@ class UserCar(AbstractUser):
         AUTOSHOW = 'autoshow'
 
     email = models.EmailField(unique=True)
-    role = models.CharField(choices=Roles.choices, default=Roles.CUSTOMER)
+    role = models.CharField(choices=Roles.choices, default=Roles.CUSTOMER, max_length=8)
     is_blocked = models.BooleanField(default=False)
 
     def __str__(self) -> str:

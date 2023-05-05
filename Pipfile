@@ -19,6 +19,9 @@ pytest = "*"
 django-pytest = "*"
 mixer = "*"
 mock = "*"
+factory-boy = "*"
+pytest-factoryboy = "*"
+pytest-django = "*"
 
 [dev-packages]
 
