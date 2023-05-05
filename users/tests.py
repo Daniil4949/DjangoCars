@@ -14,4 +14,3 @@ def test_user_autoshow_create():
     assert new_user.__str__() == "autoshow - autoshow"
 
 
-

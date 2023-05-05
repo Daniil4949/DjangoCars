@@ -12,9 +12,9 @@ class UserCustomerFactory(factory.django.DjangoModelFactory):
     username = "customer"
 
 
-class UserAutoShowFactory(factory.django.DjangoModelFactory):
-    class Meta:
-        model = UserCar
-
-    username = "autoshow"
-    role = "autoshow"
+# class UserAutoShowFactory(factory.django.DjangoModelFactory):
+#     class Meta:
+#         model = UserCar
+#
+#     username = "autoshow"
+#     role = "autoshow"

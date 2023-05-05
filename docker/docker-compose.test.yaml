@@ -25,7 +25,7 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile_test
-    command: python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000
+    # command: python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
     ports:
