@@ -71,12 +71,12 @@ class Auto(DesirableAuto):
 
 class AutoProvider(DesirableAuto):
     count = models.PositiveIntegerField(default=1)
-    provider = models.OneToOneField(Provider, on_delete=models.CASCADE)
+    provider = models.OneToOneField(Provider, on_delete=models.PROTECT)
 
 
 class SoldAuto(DesirableAuto):
     count = models.PositiveIntegerField(default=1)
-    customer = models.OneToOneField(Customer, on_delete=models.CASCADE)
+    customer = models.OneToOneField(Customer, on_delete=models.PROTECT)
 
     def __str__(self) -> str:
         return f"Sold car. {self.mark} - {self.model}. Price: {self.price}. Customer - {self.customer.name}"
