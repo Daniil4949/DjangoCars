@@ -4,11 +4,11 @@ from autoshow.views import AutoShowLists, DefineAutoShow, UpdateAutoShow
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register("profile", UpdateAutoShow)
+router.register("autoshow-profile", UpdateAutoShow, basename="autoshow-profile")
 
 urlpatterns = [
     path("autoshows/", AutoShowLists.as_view(), name="all-autoshows"),
     path("autoshows/<int:pk>/", DefineAutoShow.as_view(), name="define-autoshow"),
-    path("update-autoshow/", include(router.urls), name="updating-profile"),
+    path("update-autoshow/", include(router.urls), name="updating-autoshow"),
 
 ]
