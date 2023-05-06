@@ -14,8 +14,8 @@ class AutoShowSerializer(ModelSerializer):
 
     class Meta:
         model = AutoShow
-        fields = ("name", "location", "balance", "customers")
-        read_only_fields = ("name", "location", "user", "balance")
+        fields = ("name", "balance", "customers")
+        read_only_fields = ("name", "user", "balance")
 
 
 class AutoShowUpdateSerializer(ModelSerializer):
