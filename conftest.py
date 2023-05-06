@@ -12,5 +12,3 @@ register(UserCustomerFactory)
 def customer(db, customer_factory):
     new_customer = customer_factory.create()
     return new_customer
-
-

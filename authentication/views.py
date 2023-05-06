@@ -1,6 +1,6 @@
 from rest_framework import generics
 from rest_framework.permissions import AllowAny
-from authentication.serializers import EmailSerializer, ResetPasswordSerializer, RegisterSerializer, ResetUserName
+from authentication.serializers import EmailSerializer, ResetPasswordSerializer, RegisterSerializer
 from users.models import UserCar
 from django.utils.http import urlsafe_base64_encode
 from django.utils.encoding import force_bytes

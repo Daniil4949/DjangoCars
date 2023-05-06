@@ -1,4 +1,4 @@
-from rest_framework import viewsets, status
+from rest_framework import viewsets
 from Cars.permissions import ProviderPermission
 from users.models import Provider
 from provider.serializers import ProviderSerializer

@@ -1,5 +1,5 @@
 import factory
-from users.models import UserCar, Provider, Customer, AutoShow
+from users.models import UserCar
 from faker import Faker
 
 fake = Faker()

@@ -2,7 +2,7 @@ from users.models import AutoShow, DesirableAuto
 import rest_framework.viewsets as viewsets
 from autoshow.serializers import AutoShowSerializer, AutoShowUpdateSerializer
 from Cars.permissions import AutoShowPermission
-from autoshow.serializers import DesirableAutoReadSerializer, DesirableAutoSerializer
+from autoshow.serializers import DesirableAutoReadSerializer
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 
 

@@ -42,5 +42,3 @@ class DesirableAutoSerializer(ModelSerializer):
     class Meta:
         model = DesirableAuto
         fields = ("mark", "model", "price")
-
-
